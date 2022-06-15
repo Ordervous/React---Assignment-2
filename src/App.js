@@ -1,4 +1,6 @@
 import React from 'react';
+import companies from './Experience';
+import './Experience.css';
 
 function App() {
   return (
