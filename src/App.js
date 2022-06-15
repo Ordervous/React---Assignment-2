@@ -3,18 +3,27 @@ import companies from './Experience';
 import './Experience.css';
 
 function App() {
+  let companyList = companies.map((company) => {
+    return (
+      <div className='experience'>
+        <h2>{company.companyName}, {company.jobTitle}</h2>
+        <p>{company.description}</p>
+      </div>
+    )
+  })
+
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>My Work Experience</h1>
+      {companies.length
+        ? <div>
+          {companyList}
+        </div> : <h2>I have just completed High School</h2>
+      }
     </div>
-  );
-}
+  )
+};
 
 export default App;
+
+
